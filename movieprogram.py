@@ -14,7 +14,7 @@ If there are members
 If the number of people is 8 or more  
     Apply a 10% group discount  
 Apple 8 % sales tax
-Print the final price after all discounts
+Print final price after all discounts
 '''
 import sys   
 movieName = input("Name of Movie? ")

@@ -36,7 +36,7 @@ class TestAnagram(unittest.TestCase):
     def test_single_character(self):
         self.assertTrue(is_anagram("a", "a"))
     def test_empty_strings(self):
-        self.assertTrue(is_anagram("", ""))
+        self.assertTrue(is_anagram("Saket Hi", "Hi Saket"))
 def run_tests():
     suite = unittest.TestLoader().loadTestsFromTestCase(TestAnagram)
     runner = unittest.TextTestRunner(verbosity=2)

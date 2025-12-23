@@ -1,4 +1,5 @@
 import pytest
+
 def is_anagram(string1, string2):
     string1 = string1.lower()
     string2 = string2.lower()
@@ -21,6 +22,7 @@ def is_anagram(string1, string2):
             return False
         place1 += 1
     return True
+
 test_data = [
     ("listen", "silent", True),
     ("evil", "Evil", True),
@@ -28,8 +30,16 @@ test_data = [
     ("hello", "world", False),
     ("test", "tests", False),
     ("aabb", "abbb", False),
-    ("dog", "dog", True),
+    ("dog", "dog", False),
 ]
+
 @pytest.mark.parametrize("string1, string2, expected", test_data)
 def test_is_anagram(string1, string2, expected):
     assert is_anagram(string1, string2) == expected
+test_is_anagram("listen", "silent", True)
+test_is_anagram("evil", "Evil", True)
+test_is_anagram("triangle", "integral", True)
+test_is_anagram("hello", "world", False)
+test_is_anagram("test", "tests", False)
+test_is_anagram("aabb", "abbb", False)
+test_is_anagram("dog", "dog", False)

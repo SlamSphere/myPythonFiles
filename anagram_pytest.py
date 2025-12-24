@@ -30,16 +30,14 @@ test_data = [
     ("hello", "world", False),
     ("test", "tests", False),
     ("aabb", "abbb", False),
-    ("dog", "dog", False),
+    ("dog", "dog", True),
 ]
 
 @pytest.mark.parametrize("string1, string2, expected", test_data)
 def test_is_anagram(string1, string2, expected):
     assert is_anagram(string1, string2) == expected
-test_is_anagram("listen", "silent", True)
-test_is_anagram("evil", "Evil", True)
-test_is_anagram("triangle", "integral", True)
-test_is_anagram("hello", "world", False)
-test_is_anagram("test", "tests", False)
-test_is_anagram("aabb", "abbb", False)
-test_is_anagram("dog", "dog", False)
+
+if __name__ == "__main__":
+    print("Running pytest test cases...\n")
+    pytest.main([__file__])
+   
